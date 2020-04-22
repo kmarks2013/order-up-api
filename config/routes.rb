@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :dishes
   resources :resturants
-  resources :users
+  resources :users, only: [:index,:show, :update, :delete]
 
   post '/login', to: 'auth#login'
   post 'signup', to: 'users#create'
