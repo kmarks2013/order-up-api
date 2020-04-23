@@ -1,5 +1,11 @@
 class User < ApplicationRecord
     # password validations
+    PASSWORD_FORMAT = /\A
+        (?=.*[A-Z])
+        (?=.*[a-z])
+        (?=.*\d)
+        (?=.*[[:^alnum:]])
+    /x
     has_secure_password
     validates :password, :length => {:minimum => 6 }
     #username validations
