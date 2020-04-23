@@ -4,4 +4,8 @@ class ApplicationController < ActionController::API
         ENV['JWT_SECRET_KEY']
     end
 
+    def user_payload(user)
+        {user_id: user.id}
+    end
+
 end
